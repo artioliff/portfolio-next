@@ -1,0 +1,112 @@
+:root {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Paleta de cores do tema black */
+  --g1: #000000;
+  --g2: #c10801;
+  --g3: #f16001;
+  --g4: #d9c3ab;
+
+  /* Cores principais - Papel Preto sobre Mesa Escura */
+  --black-desk: #000000;        /* Mesa/fundo */
+  --black-paper: #0a0a0a;       /* Papel/folha */
+  --black-card: #121212;        /* Cards */
+  --white-text: #ffffff;        /* Texto principal */
+  --white-muted: #b0b0b0;       /* Texto secundário */
+  --white-subtle: #707070;      /* Texto terciário */
+
+  /* Cores de destaque */
+  --accent-red: var(--g2);      /* #c10801 */
+  --accent-orange: var(--g3);   /* #f16001 */
+  --accent-beige: var(--g4);    /* #d9c3ab */
+
+  /* Bordas */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(241, 96, 1, 0.3);
+
+  /* Sombras para papel preto */
+  --shadow-paper: 
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  
+  --shadow-paper-hover: 
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 8px 16px rgba(0, 0, 0, 0.5),
+    0 16px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  /* Brilhos de destaque */
+  --glow-red: 0 0 20px rgba(193, 8, 1, 0.4);
+  --glow-orange: 0 0 20px rgba(241, 96, 1, 0.4);
+  --glow-beige: 0 0 15px rgba(217, 195, 171, 0.3);
+}
+
+/* Aplicação global */
+body {
+  background: var(--black-desk);
+  color: var(--white-text);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Seleção */
+::selection {
+  background: var(--accent-orange);
+  color: var(--black-desk);
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-orange) var(--black-desk);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--black-desk);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--accent-orange);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-red);
+}
+
+/* Tema Black */
+.theme-black {
+  background: var(--black-desk);
+  color: var(--white-text);
+}
+
+/* Efeito de textura de papel preto */
+.paper-texture-black {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.01) 2px,
+      rgba(255, 255, 255, 0.01) 4px
+    );
+}
+
+/* Linha divisória com gradiente */
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-orange) 50%,
+    transparent
+  );
+}

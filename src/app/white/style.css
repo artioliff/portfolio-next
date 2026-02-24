@@ -1,0 +1,74 @@
+/* Atualize o style.css com estas variáveis */
+:root {
+  /* Cores de papel/folha */
+  --paper: #fefefe;
+  --paper-shadow: rgba(0, 0, 0, 0.08);
+  --paper-edge: #f5f5f5;
+  --ink: #2c2c2c;
+  --ink-light: #6b6b6b;
+  
+  /* Mesa/fundo */
+  --desk: #e8e6e3;
+  --desk-texture: #ddd9d5;
+  
+  /* Sombras realistas de papel */
+  --shadow-paper: 
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.03);
+  
+  --shadow-paper-hover: 
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 6px 12px rgba(0, 0, 0, 0.06),
+    0 12px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* Seleção/scroll */
+::selection {
+  background: color-mix(in srgb, var(--accent2) 35%, transparent);
+  color: var(--foreground);
+}
+
+* {
+  scrollbar-color: color-mix(in srgb, var(--accent2) 35%, transparent) color-mix(in srgb, var(--card) 100%, transparent);
+}
+
+/* ===== Aplicação global ===== */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* .theme-white {} */
+/* Efeito de textura de papel sutil */
+.paper-texture {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.01) 2px,
+      rgba(0,0,0,0.01) 4px
+    );
+}
+
+/* Animação suave para hover */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Separador minimalista */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0,0,0,0.1) 50%,
+    transparent
+  );
+}
